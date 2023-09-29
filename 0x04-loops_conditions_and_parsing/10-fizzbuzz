@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
+#FizzBuzz
+
+n=1
+
+while [ "$n" -le 100 ]; do
 
 
-for i in {1..100}
-do
-if ((i % 15 == 0))
-    then
+  if ! (( n % 3 )) && ! (( n % 5 )); then
     echo "FizzBuzz"
-elif ((i % 5 == 0))
-    then
-    echo "Buzz"
-elif (( i % 3 == 0))
-    then
+  elif ! (( n % 3 )); then
     echo "Fizz"
-else
-    echo "$i"
-fi
+  elif ! (( n % 5 )); then
+    echo "Buzz"
+  else
+    echo "$n"
+  fi
+  
+  ((n++))
 done

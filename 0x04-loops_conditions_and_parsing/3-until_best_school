@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
+#print "Best school" to stdout 10 times using until loop
 
-i="0"
-until [ $i -eq 10 ]
-do
-echo "Best School"
-i=$((i+1))
+printed=10;
+until [ "$printed" -lt 1 ]; do
+    echo "Best School";
+    printed=$((printed - 1 ));
 done
