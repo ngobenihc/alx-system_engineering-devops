@@ -1,5 +1,6 @@
-# Create a manifest that fixes file name typo
-exec { 'fix_typo':
-  command => 'mv /var/www/html/wp-includes/class-wp-locale.php /var/www/html/wp-includes/class-wp-locale.phpp',
-  path    => '/bin/'
+# Apache returns 500; use this script to fix typo in config
+
+exec { 'fix config typo':
+  command => "sed -i 's/.phpp/.php/' /var/www/html/wp-settings.php",
+  path    => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
 }
