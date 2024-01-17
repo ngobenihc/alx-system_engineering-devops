@@ -1,5 +1,5 @@
-# Fixing apache error
-exec { 'fix-wordpress':
-  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
-  path    => '/usr/local/bin/:/bin/'
+# Create a manifest that fixes file name typo
+exec { 'fix_typo':
+  command => 'mv /var/www/html/wp-includes/class-wp-locale.php /var/www/html/wp-includes/class-wp-locale.phpp',
+  path    => '/bin/'
 }
